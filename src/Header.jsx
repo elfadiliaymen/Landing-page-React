@@ -1,26 +1,20 @@
 import React from "react";
 
-
-function Header(){
-    return (
+function Header() {
+  return (
     <header className="header">
-      <div className="container">
+      <div className="header-inner">
 
-        <div className="logo">
-          <h2>☀️ SolarVision</h2>
-        </div>
+        <a href="#home" className="logo">SolarVision</a>
 
-        <nav className="navbar">
+        <nav className="nav-links">
           <a href="#home">Home</a>
           <a href="#features">Features</a>
           <a href="#about">About</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
+          <a href="#contact">Resources</a>
         </nav>
 
-        <button className="btn-primary">
-          Get Started
-        </button>
+        <a href="#contact" className="btn-primary">Start</a>
 
       </div>
     </header>

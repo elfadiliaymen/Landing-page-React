@@ -1,55 +1,30 @@
 import React from "react";
 
-
-function Footer(){
-    return (
+function Footer() {
+  return (
     <footer className="footer">
+      <div className="container">
 
-      <div className="footer-top">
+        <a href="#home" className="footer-logo">SolarVision</a>
 
-        <div>
-          <h3>☀️ SolarVision</h3>
+        <nav className="footer-nav">
+          <a href="#about">About</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">Careers</a>
+          <a href="#about">Documentation</a>
+        </nav>
 
-          <p>
-            Smart solar energy solutions powered by artificial intelligence.
-          </p>
-        </div>
-
-        <div>
-          <h4>Company</h4>
-
-          <a href="#">About</a>
-          <a href="#">Features</a>
-          <a href="#">Contact</a>
-          <a href="#">Careers</a>
-        </div>
-
-        <div>
-          <h4>Resources</h4>
-
-          <a href="#">Documentation</a>
-          <a href="#">Blog</a>
-          <a href="#">Help Center</a>
-          <a href="#">FAQ</a>
-        </div>
-
-        <div>
-          <h4>Follow Us</h4>
-
-          <a href="#">Facebook</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">GitHub</a>
-          <a href="#">Instagram</a>
+        <div className="footer-bottom">
+          <p className="footer-copyright">© 2026 SolarVision. All rights reserved.</p>
+          <div className="footer-links">
+            <a href="#home">Privacy policy</a>
+            <a href="#home">Terms of service</a>
+            <a href="#home">Cookies settings</a>
+          </div>
         </div>
 
       </div>
-
-      <hr />
-
-      <p className="copyright">
-        © 2026 SolarVision. All Rights Reserved.
-      </p>
-
     </footer>
   );
 }

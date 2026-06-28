@@ -1,42 +1,59 @@
 import React from "react";
+import Testimonial from "./Testimonial";
 
+function Testimonials() {
 
-function Testimonials(){
-    return (
+  const testimonials = [
+    {
+      id: 1,
+      text: '"Our electricity bill dropped by 40% after using SolarVision."',
+      name: "Sarah Johnson",
+      job: "Homeowner",
+      image: "/public/Screenshot 2026-06-28 224057.png",
+    },
+    {
+      id: 2,
+      text: '"The AI maintenance alerts helped us avoid expensive repairs."',
+      name: "David Wilson",
+      job: "Solar Technician",
+      image: "/public/diego-hernandez-MSepzbKFz10-unsplash.jpg",
+    },
+    {
+      id: 3,
+      text: '"The dashboard is beautiful and very easy to use."',
+      name: "Emma Brown",
+      job: "Business Owner",
+      image: "/public/Screenshot 2026-06-28 224431.png",
+    },
+  ];
+
+  return (
     <section className="testimonials" id="testimonials">
 
-      <h2>What Our Customers Say</h2>
+      <div className="container">
 
-      <div className="testimonial-container">
+        <div className="section-header">
+          <h2 className="section-title">
+            Real results
+          </h2>
 
-        <div className="testimonial-card">
-          <p>
-            "Our electricity bill dropped by 40% after using SolarVision."
+          <p className="section-subtitle">
+            Hear from those who switched to SolarVision.
           </p>
-
-          <h4>Sarah Johnson</h4>
-
-          <span>Homeowner</span>
         </div>
 
-        <div className="testimonial-card">
-          <p>
-            "The AI maintenance alerts helped us avoid expensive repairs."
-          </p>
+        <div className="testimonials-grid">
 
-          <h4>David Wilson</h4>
+          {testimonials.map((testimonial) => (
+            <Testimonial
+              key={testimonial.id}
+              text={testimonial.text}
+              name={testimonial.name}
+              job={testimonial.job}
+              image={testimonial.image}
+            />
+          ))}
 
-          <span>Solar Technician</span>
-        </div>
-
-        <div className="testimonial-card">
-          <p>
-            "The dashboard is beautiful and very easy to use."
-          </p>
-
-          <h4>Emma Brown</h4>
-
-          <span>Business Owner</span>
         </div>
 
       </div>

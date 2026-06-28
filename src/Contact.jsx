@@ -1,39 +1,126 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-function Contact(){
- return (
+function Contact() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  function handleChange(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  function handleSubmit(e) {
+  e.preventDefault();
+
+  if (form.name.length < 3) {
+    alert("Name must contain at least 3 characters.");
+    return;
+  }
+
+  if (!form.email.includes("@")) {
+    alert("Please enter a valid email.");
+    return;
+  }
+
+  if (form.message.length < 10) {
+    alert("Message must contain at least 10 characters.");
+    return;
+  }
+
+  alert(
+`Name: ${form.name}
+Email: ${form.email}
+
+Message:
+${form.message}`
+  );
+
+  setForm({
+    name: "",
+    email: "",
+    message: "",
+  });
+}
+
+  return (
     <section className="contact" id="contact">
+      <div className="container contact-grid">
 
-      <h2>Ready to Start Saving Energy?</h2>
+        <div className="contact-content">
 
-      <p>
-        Join thousands of customers using SolarVision to optimize
-        their solar systems.
-      </p>
+          <span className="contact-label">
+            Connect
+          </span>
 
-      <form>
+          <h2 className="contact-title">
+            Get in touch
+          </h2>
 
-        <input
-          type="text"
-          placeholder="Your Name"
-        />
+          <p className="contact-subtitle">
+            We're here to help you optimize your system.
+          </p>
 
-        <input
-          type="email"
-          placeholder="Your Email"
-        />
+          <form onSubmit={handleSubmit} className="contact-form">
 
-        <textarea
-          placeholder="Your Message"
-        ></textarea>
+            <div>
+              <label className="form-label">Name</label>
 
-        <button type="submit">
-          Send Message
-        </button>
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                className="form-input"
+                placeholder="Your name"
+                required
+              />
+            </div>
 
-      </form>
+            <div>
+              <label className="form-label">Email</label>
 
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                className="form-input"
+                placeholder="Your email"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="form-label">Message</label>
+
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                className="form-input form-textarea"
+                placeholder="Tell us what you need"
+                required
+              ></textarea>
+            </div>
+
+            <button className="contact-submit">
+              Send
+            </button>
+
+          </form>
+
+        </div>
+
+        <div className="contact-image">
+          <img src="/public/pexels-tima-miroshnichenko-5453841.jpg" alt="Contact" />
+        </div>
+
+      </div>
     </section>
   );
 }

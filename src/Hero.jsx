@@ -1,45 +1,30 @@
 import React from "react";
 
-
-function Hero(){
-    return (
+function Hero() {
+  return (
     <section className="hero" id="home">
+      <div className="container">
+        <div className="hero-card">
 
-      <div className="hero-content">
+          <div className="hero-text">
+            <h1 className="hero-title">Power your home with smart solar energy</h1>
+            <p className="hero-desc">
+              Monitor your solar panels in real time and predict maintenance
+              before problems occur. Reduce your electricity costs using
+              AI-powered insights.
+            </p>
+            <div className="hero-buttons">
+              <a href="#contact" className="btn-primary">Start</a>
+              <a href="#about" className="btn-secondary">Learn</a>
+            </div>
+          </div>
 
-        <span className="hero-badge">
-          🌱 Clean Energy Solution
-        </span>
+          <div className="hero-image">
+            <img src="public/ashes-sitoula-UfEyDdXlRp8-unsplash.jpg" alt="Hero" />
+          </div>
 
-        <h1>
-          Power Your Home with Smart Solar Energy
-        </h1>
-
-        <p>
-          Monitor your solar panels in real time, predict maintenance before
-          problems occur, and reduce your electricity costs using AI-powered
-          insights.
-        </p>
-
-        <div className="hero-buttons">
-          <button className="btn-primary">
-            Get Started
-          </button>
-
-          <button className="btn-secondary">
-            Learn More
-          </button>
         </div>
-
       </div>
-
-      <div className="hero-image">
-        <img
-          src="/images/solar-hero.png"
-          alt="Solar panels"
-        />
-      </div>
-
     </section>
   );
 }

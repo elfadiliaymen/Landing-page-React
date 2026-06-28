@@ -1,57 +1,75 @@
 import React from "react";
 import Feature from "./Feature";
 
-function Features(){
+function Features() {
 
-    const featuresList = [
-  {
-    id: 1,
-    title: "Real-Time Monitoring",
-    description: "Track your solar production instantly with live data.."
-  },
-  {
-    id: 2,
-    title: "AI Predictions",
-    description: " Receive maintenance alerts before problems occur."
-  },
-  {
-    id: 3,
-    title: "Energy Analytics",
-    description: "Props allow components to receive data."
-  },
-  {
-    id: 4,
-    title: "Mobile Dashboard",
-    description: " Manage your solar system from anywhere."
-  } ,
-   {
-    id: 5,
-    title: "Battery Management",
-    description: "  Monitor battery performance and energy storage."
-  } ,
-    {
-    id: 5,
-    title: "Eco Impact",
-    description: "Measure your CO₂ savings and environmental impact.."
-  }
-];
+    const features = [
 
-    return (
-    <section className="features" id="features">
+        {
+            id:1,
+            label:"Predictions",
+            title:"AI maintenance alerts",
+            desc:"Catch problems before they become expensive repairs.",
+            image:"/public/florida-solar-fix-XZP59dwklV4-unsplash.jpg"
+        },
 
-      <div className="features-grid">
-        {featuresList.map((feature) => (
-          <Feature
-            key={feature.id}
-            title={feature.title}
-            description={feature.description}
-          />
-        ))}
-      </div>
+        {
+            id:2,
+            label:"Analytics",
+            title:"Energy analytics",
+            desc:"Understand your consumption patterns and optimize usage.",
+            image:"/public/linkedin-sales-solutions-UK1N66KUkMk-unsplash.jpg"
+        },
 
+        {
+            id:3,
+            label:"Reports",
+            title:"Smart reports",
+            desc:"Get clear insights and shareable reports in one click.",
+            image:"/public/annie-spratt-QckxruozjRg-unsplash.jpg"
+        }
 
-    </section>
-  );
+    ];
+
+    return(
+
+        <section className="features">
+
+            <div className="container">
+
+                <div className="section-header">
+
+                    <span className="section-label">
+                        Features
+                    </span>
+
+                    <h2 className="section-title">
+                        What we offer
+                    </h2>
+
+                    <p className="section-subtitle">
+                        Track your solar production instantly with live data.
+                    </p>
+
+                </div>
+
+                <div className="features-grid">
+
+                    {features.map((feature)=>(
+                        <Feature
+                            key={feature.id}
+                            feature={feature}
+                        />
+                    ))}
+
+                </div>
+
+            </div>
+
+        </section>
+
+    );
+
 }
 
 export default Features;
